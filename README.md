@@ -1,2 +1,2 @@
 # Cabinet-Infirmier
-Projet d'études : mise en place de pages web pour les infirmiers, affichant les informations des patients. Réalisation en implémentant un système de sauvegarde des données dans un document XML.
+Pendant mes études, j'ai réalisé un projet consistant à concevoir des pages web dédiées aux infirmiers. Ces pages affichent de manière conviviale les informations des patients, intégrant un système de sauvegarde dans un document XML. L'interface offre une navigation intuitive, facilitant l'accès rapide aux données cruciales pour les professionnels de la santé. Cette approche combine l'efficacité de l'informatique avec la praticité d'un format XML, offrant une solution optimale pour la gestion des informations médicales
