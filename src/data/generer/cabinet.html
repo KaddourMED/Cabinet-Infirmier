@@ -1,0 +1,103 @@
+<html xmlns:act="http://www.ujf-grenoble.fr/l3miage/actes" xmlns:cab="http://www.ujf-grenoble.fr/l3miage/medical">
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Profil de Frechie</title>
+        <link rel="stylesheet" type="text/css" href="../css/infirmierPage.css">
+        <script type="text/javascript">
+                    function openFacture(prenom, nom, actes) {
+                        var width  = 500;
+                        var height = 300;
+                        if(window.innerWidth) {
+                        var left = (window.innerWidth-width)/2;
+                        var top = (window.innerHeight-height)/2;
+                        }
+                        else {
+                        var left = (document.body.clientWidth-width)/2;
+                        var top = (document.body.clientHeight-height)/2;
+                        }
+                        var factureWindow = window.open('','facture','menubar=yes, scrollbars=yes, top='+top+', left='+left+', width='+width+', height='+height+'');
+                        factureText = "Facture pour : " + prenom + " " + nom + " " + actes;
+                        factureWindow.document.write(factureText);
+                    }
+                </script>
+    </head>
+    <body>
+                Bonjour Frechie,
+        <br>
+        <p>
+            Aujourd'hui, vous avez 2 patients.
+            <br>
+        </p>
+        <h3>Liste des patients :</h3>
+        <br>
+                Nom : Al&eacute;cole
+        <br>
+                Prenom : Yvon
+        <br>
+                Adresse : 6<sup>e</sup> &eacute;tage,
+                  50, avenue F&eacute;lix Viallet,  
+         Grenoble, 38031
+        <br>
+        <h4>Acte de Visite :</h4>
+        <p> Visite du 2015-12-08</p>
+                    Injection sous-cutan&eacute;e.
+        
+        <br>
+        <br>
+        <button class="button" type="button" onclick="
+                 openFacture(`Al&eacute;cole`,
+                 `Yvon`,
+                 `
+            Injection sous-cutan&eacute;e.
+        `)
+             ">
+             facture
+        </button>
+        <br>
+        <br>
+        <br>
+        <br>
+                Nom : Pien
+        <br>
+                Prenom : Oscare
+        <br>
+                Adresse : , rue Casimir Brenier,  
+         Grenoble, 38000
+        <br>
+        <h4>Acte de Visite :</h4>
+        <p> Visite du 2015-12-08</p>
+         
+            Pr&eacute;l&egrave;vement par ponction veineuse directe
+        
+        <br>
+        <br>
+        <button class="button" type="button" onclick="
+                 openFacture(`Pien`,
+                 `Oscare`,
+                 ` 
+            Pr&eacute;l&egrave;vement par ponction veineuse directe
+        `)
+             ">
+             facture
+        </button>
+        <br>
+        <br>
+        <br>
+                    Injection intraveineuse directe en s&eacute;rie.
+        
+        <br>
+        <br>
+        <button class="button" type="button" onclick="
+                 openFacture(`Pien`,
+                 `Oscare`,
+                 `
+            Injection intraveineuse directe en s&eacute;rie.
+        `)
+             ">
+             facture
+        </button>
+        <br>
+        <br>
+        <br>
+    </body>
+</html>

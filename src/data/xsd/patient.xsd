@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.ujf-grenoble.fr/l3miage/medical"
+           xmlns:pa="http://www.ujf-grenoble.fr/l3miage/medical"
+           elementFormDefault="qualified">
+
+    <!-- Définition de l'élément "patient" avec le type "Patient" -->
+    <xs:element name="patient" type="pa:Patient"/>
+
+    <!-- Définition du type complexe "Patient" -->
+    <xs:complexType name="Patient">
+        
+        <xs:sequence>
+            <!-- Éléments représentant les attributs du patient -->
+            <xs:element name="nom" type="xs:string" minOccurs="1"/>
+            <xs:element name="prénom" type="xs:string" minOccurs="1"/>
+            <xs:element name="sexe" type="pa:Sexe" minOccurs="1"/>
+            <xs:element name="naissance" type="xs:date" minOccurs="1"/>
+            <xs:element name="numéro" type="pa:Numero" minOccurs="1"/>
+            <xs:element name="adresse" type="pa:Adresse" minOccurs="1"/>
+            <xs:element name="visite" type="pa:Visite" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+
+    </xs:complexType>
+
+
+    <!-- Définition du type simple "Sexe" avec les valeurs possibles "M" ou "F" -->
+    <xs:simpleType name="Sexe">
+
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="M"/>
+          <xs:enumeration value="F"/>
+        </xs:restriction>
+
+    </xs:simpleType>
+
+
+    <!-- Définition du type simple "Numero" avec une contrainte de motif -->
+    <xs:simpleType name="Numero">
+
+        <!--Contrainte sur le numéro de sécurité sociale : il ne doit pas dépasser 15 chiffres.-->
+        <xs:restriction base="xs:long">
+            <xs:pattern value="\d{15}"/>
+        </xs:restriction>
+
+    </xs:simpleType>
+
+
+    <!-- Définition du type complexe "Adresse" -->
+    <xs:complexType name="Adresse">
+
+        <xs:sequence>
+            <!-- Éléments représentant les attributs de l'adresse -->
+            <xs:element name="rue" type="xs:string" minOccurs="1"/>
+            <xs:element name="codePostal" type="pa:CodePostal" minOccurs="1"/>
+            <xs:element name="ville" type="xs:string" minOccurs="1"/>
+        </xs:sequence>
+
+    </xs:complexType>
+
+
+    <!-- Définition du type simple "CodePostal" avec une contrainte de motif -->
+    <xs:simpleType name="CodePostal">
+
+        <!--Une restriction sur  le code postale qu'il ne depasse pas les 5 lettres-->
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{5}"/>
+        </xs:restriction>
+
+    </xs:simpleType>
+
+
+    <!-- Définition du type complexe "Visite" -->
+    <xs:complexType name="Visite">
+
+        <xs:sequence>
+            <!-- Éléments représentant les attributs de la visite -->
+            <xs:element name="intervenant" type="pa:Intervenant" minOccurs="1"/>
+            <xs:element name="acte" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+
+        <!-- Attribut "date" pour la date de la visite, requis -->
+        <xs:attribute name="date" type="xs:date" use="required"/>
+
+    </xs:complexType>
+
+
+    <!-- Définition du type complexe "Intervenant" -->
+    <xs:complexType name="Intervenant">
+
+        <xs:sequence>
+            <!-- Éléments représentant les attributs de l'intervenant -->
+            <xs:element name="nom" type="xs:string" minOccurs="1"/>
+            <xs:element name="prénom" type="xs:string" minOccurs="1"/>
+        </xs:sequence>
+
+    </xs:complexType>
+
+</xs:schema>
+

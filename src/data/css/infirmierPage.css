@@ -1,0 +1,85 @@
+/* Style pour le corps du document */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style pour le conteneur principal */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Style pour le titre de la page */
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+/* Style pour les informations sur l'infirmier */
+.infirmier-info {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* Style pour la liste des patients */
+.patient-list {
+    margin-top: 20px;
+}
+
+/* Style pour chaque patient */
+.patient {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    background-color: #fff;
+    transition: background-color 0.3s;
+    border-radius: 8px;
+}
+
+/* Style pour les informations du patient */
+.patient-info {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+/* Style pour la liste des visites */
+.visite-list {
+    margin-top: 10px;
+}
+
+/* Style pour chaque visite */
+.visite {
+    margin-bottom: 10px;
+}
+
+/* Style pour chaque acte de visite */
+.acte {
+    margin-bottom: 5px;
+}
+
+/* Style pour le bouton facture */
+.button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 20px;
+}
+
+/* Effet hover sur le bouton facture */
+.button:hover {
+    background-color: #45a049;
+}

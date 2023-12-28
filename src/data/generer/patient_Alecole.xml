@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cab:patient xmlns:act="http://www.ujf-grenoble.fr/l3miage/actes" 
+             xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" 
+             xmlns:cab="http://www.ujf-grenoble.fr/l3miage/medical" 
+             xs:schemaLocation="http://www.ujf-grenoble.fr/l3miage/medical ../xsd/patient.xsd">
+    <cab:nom>Alécole</cab:nom>
+    <cab:prénom>Yvon</cab:prénom>
+    <cab:sexe>M</cab:sexe>
+    <cab:naissance>1998-08-02</cab:naissance>
+    <cab:numéro>198082205545252</cab:numéro>
+    <cab:adresse>
+        <cab:rue>avenue Félix Viallet</cab:rue>
+        <cab:codePostal>38031</cab:codePostal>
+        <cab:ville>Grenoble</cab:ville>
+    </cab:adresse>
+    <cab:visite date="2015-12-08">
+        <cab:intervenant>
+            <cab:nom>Frechie</cab:nom>
+            <cab:prénom>Sarah</cab:prénom>
+        </cab:intervenant>
+        <cab:acte>
+            Injection sous-cutanée.
+        </cab:acte>
+    </cab:visite>
+</cab:patient>

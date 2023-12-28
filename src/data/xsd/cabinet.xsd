@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.ujf-grenoble.fr/l3miage/medical"
+           xmlns:cb="http://www.ujf-grenoble.fr/l3miage/medical"
+           elementFormDefault="qualified">
+    
+    <!-- Déclaration de l'élément "cabinet" avec le type "Cabinet" -->
+    <xs:element name="cabinet" type="cb:Cabinet"/>
+    
+
+    <!-- Définition du type complexe "Cabinet" -->
+    <xs:complexType name="Cabinet">
+        <xs:sequence>
+            <!-- Éléments représentant les attributs du cabinet -->
+            <xs:element name="nom" type="xs:string" minOccurs="1"/>
+            <xs:element name="adresse" type="cb:Adresse" minOccurs="1"/>
+            <xs:element name="infirmiers" type="cb:Infirmiers" minOccurs="1"/>
+            <xs:element name="patients" type="cb:Patients" minOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+
+    <!-- Définition du type complexe "Adresse" -->
+    <xs:complexType name="Adresse">
+        <xs:sequence>
+            <!-- Éléments représentant les attributs de l'adresse -->
+            <xs:element name="étage" type="xs:string" minOccurs="0"/>
+            <xs:element name="numéro" type="xs:string" minOccurs="0"/>
+            <xs:element name="rue" type="xs:string" minOccurs="1"/>
+            <xs:element name="ville" type="xs:string" minOccurs="1"/>
+            <xs:element name="codePostal" type="cb:CodePostal" minOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+
+    <!-- Définition du type complexe "Infirmiers" -->
+    <xs:complexType name="Infirmiers">
+        <xs:sequence>
+            <!-- Élément représentant la liste des infirmiers -->
+            <xs:element name="infirmier" type="cb:Infirmier" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+
+    <!-- Définition du type complexe "Infirmier" -->
+    <xs:complexType name="Infirmier">
+        <xs:sequence>
+            <!-- Éléments représentant les attributs de l'infirmier -->
+            <xs:element name="nom" type="xs:string" minOccurs="1"/>
+            <xs:element name="prénom" type="xs:string" minOccurs="1"/>
+            <xs:element name="photo" type="cb:Photo" minOccurs="1"/>
+        </xs:sequence>
+        <!-- Attribut "id" pour l'identifiant de l'infirmier, requis -->
+        <xs:attribute name="id" type="xs:int" use="required"/>
+    </xs:complexType>
+    
+
+    <!-- Définition du type complexe "Patients" -->
+    <xs:complexType name="Patients">
+        <xs:sequence>
+            <!-- Élément représentant la liste des patients -->
+            <xs:element name="patient" type="cb:Patient" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+
+    <!-- Définition du type complexe "Patient" -->
+    <xs:complexType name="Patient">
+        <xs:sequence>
+            <!-- Éléments représentant les attributs du patient -->
+            <xs:element name="nom" type="xs:string" minOccurs="1"/>
+            <xs:element name="prénom" type="xs:string" minOccurs="1"/>
+            <xs:element name="sexe" type="cb:Sexe" minOccurs="1"/>
+            <xs:element name="naissance" type="xs:date" minOccurs="1"/>
+            <xs:element name="numéro" type="cb:NumeroSecu" minOccurs="1"/>
+            <xs:element name="adresse" type="cb:Adresse" minOccurs="1"/>
+            <xs:element name="visite" type="cb:Visite" minOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+
+    <!-- Déclaration du type complexe "Visite" -->
+    <xs:complexType name="Visite">
+        <xs:sequence>
+            <!-- Élément représentant la liste des actes de la visite -->
+            <xs:element name="acte" type="cb:Acte" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <!-- Attributs "date" pour la date de la visite et "intervenant" en option -->
+        <xs:attribute name="date" type="xs:date" use="required"/>
+        <xs:attribute name="intervenant" type="xs:int" use="optional"/>
+    </xs:complexType>
+    
+
+    <!-- Déclaration du type complexe "Acte" -->
+    <xs:complexType name="Acte">
+        <!-- Attribut "id" pour l'identifiant de l'acte en option -->
+        <xs:attribute name="id" type="xs:int" use="optional"/>
+    </xs:complexType>
+    
+
+    <!-- Déclaration du type simple "CodePostal" avec une contrainte de motif -->
+    <xs:simpleType name="CodePostal">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{5}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+
+    <!-- Déclaration du type simple "Photo" avec une contrainte de motif -->
+    <xs:simpleType name="Photo">
+        <xs:restriction base="xs:string">
+            <xs:pattern value=".*\.(png|jpg)"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+
+    <!-- Déclaration du type simple "Sexe" avec les valeurs possibles "M" ou "F" -->
+    <xs:simpleType name="Sexe">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="M"/>
+          <xs:enumeration value="F"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    
+    <!-- Déclaration du type simple "NumeroSecu" avec une contrainte de motif -->
+    <xs:simpleType name="NumeroSecu">
+        <xs:restriction base="xs:long">
+            <xs:pattern value="\d{15}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+</xs:schema>

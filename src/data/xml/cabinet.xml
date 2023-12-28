@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cabinet xmlns="http://www.ujf-grenoble.fr/l3miage/medical"
+         xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
+         xs:schemaLocation="http://www.ujf-grenoble.fr/l3miage/medical ../xsd/cabinet.xsd"><!--Racine du document cabinetInfirmier.xml-->
+    <nom>Soins à Grenoble</nom>
+    
+    <adresse><!--Adresse du cabinet-->
+        <numéro>60</numéro>
+        <rue>rue de la Chimie</rue>
+        <ville>Grenoble</ville>
+        <codePostal>38041</codePostal>
+    </adresse>
+    
+    <infirmiers>
+        <!--Liste des infirmiers-->
+        <infirmier id="001">
+            <nom>Frechie</nom>
+            <prénom>Sarah</prénom>
+            <photo>sarah.png</photo>
+        </infirmier>
+        
+        <infirmier id="002">
+            <nom>Sticke</nom>
+            <prénom>Sophie</prénom>
+            <photo>sophie.png</photo>
+        </infirmier>
+        
+        <infirmier id="003">
+            <nom>Ochon</nom>
+            <prénom>Paul</prénom>
+            <photo>paul.png</photo>
+        </infirmier>
+        
+    </infirmiers>
+    
+    
+    <patients>
+        <!--Liste des patients-->
+        
+        <patient>
+        <!-- 
+            Homme, né en août 98 en France, 
+            à Marseille (n°55 en bouches du rhône),
+            458e de naissance            
+        -->
+            <nom>Alécole</nom>
+            <prénom>Yvon</prénom>
+            <sexe>M</sexe>
+            <naissance>1998-08-02</naissance>
+            <numéro>198082205545252</numéro>
+            <adresse>
+                <étage>6</étage>
+                <numéro>50</numéro>
+                <rue>avenue Félix Viallet</rue>
+                <ville>Grenoble</ville>
+                <codePostal>38031</codePostal>
+            </adresse>
+            <!--Liste des visites et actes d'Yvon-->
+            <visite date="2015-12-08" intervenant="001">
+                <acte id="109"/>
+            </visite>
+        </patient>
+        
+        
+        <patient>
+        <!-- 
+            Femme, née le 8 mars 82 en France, 
+            à Lyon (n°23 dans le rhône),
+            52e de naissance            
+        -->
+            <nom>Orouge</nom>
+            <prénom>Elvire</prénom>
+            <sexe>F</sexe>
+            <naissance>1982-03-08</naissance>
+            <numéro>282036902305218</numéro>
+            <adresse>
+                <étage></étage>
+                <rue>Rond-Point de la Croix de Vie</rue>
+                <ville>La Tronche</ville>
+                <codePostal>38700</codePostal>
+            </adresse>
+            
+            <visite date="2015-12-08">
+                <acte id="300"/>
+            </visite>
+        </patient>
+        
+        
+        <patient>
+        <!--Oscare est née le 25 mars 75 en France,
+         à Chambéry (n° 65 dans la Savoie) Il s'agissait de la 692e naissance. -->
+            <nom>Pien</nom>
+            <prénom>Oscare</prénom>
+            <sexe>F</sexe>
+            <naissance>1975-03-25</naissance>
+            <numéro>275037306569202</numéro>
+            <adresse><!--Adresse d'Oscare-->
+                <étage></étage>
+                <numéro></numéro>
+                <rue>rue Casimir Brenier</rue>
+                <ville>Grenoble</ville>
+                <codePostal>38000</codePostal>
+            </adresse>
+            <!--Liste des visites et actes d'Oscare-->
+            <visite date="2015-12-08" intervenant="001">
+                <acte id="101"/>
+                <acte id="105"/>
+            </visite>
+        </patient>
+        
+        
+        <patient>
+        <!--Xavier est un petit garçon de 4 ans,
+        né le 02 août 2011 en France, à Bordeaux (n° 63 dans la Gironde).
+        Il s'agit de la 35e naissance-->
+            <nom>Kapoëtla</nom>
+            <prénom>Xavier</prénom>
+            <sexe>M</sexe>
+            <naissance>2011-08-02</naissance>
+            <numéro>111083306303521</numéro>
+            <adresse><!--Adresse de Xavier-->
+                <étage></étage>
+                <numéro>25</numéro>
+                <rue>rue des Martyrs</rue>
+                <ville>Grenoble</ville>
+                <codePostal>38042</codePostal>
+            </adresse>
+            <!--Liste des visites et actes de Xavier-->
+            <visite date="2015-12-08">
+                <acte id="111"/>
+            </visite>
+        </patient>
+    </patients>
+</cabinet>
